@@ -1,4 +1,4 @@
-/* global shoppingList, store */
+/* global shoppingList, store, api */
 'use strict';
 
 $(document).ready(function() {
@@ -18,9 +18,19 @@ $(document).ready(function() {
 
 // // console.log(api.BASE_URL);
 
-api.createItem('onions', (newItem) => {
-  api.getItems((items) => {
-    console.log(items);
-    shoppingList.render();
-  });
-});
+// api.createItem('onions', (newItem) => {
+//   api.getItems((items) => {
+//     console.log(items);
+//     shoppingList.render();
+//   });
+
+/* test code: step 6 */
+
+// api.getItems((items) => {
+//   const item = items[0];
+
+//   api.updateItem(item.id, { name: 'foobar' }, () => {
+//     console.log('updated!');
+//   });
+}
+);
