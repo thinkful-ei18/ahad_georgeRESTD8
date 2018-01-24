@@ -31,9 +31,18 @@ const api = (function () {
       success: callback
     });
   }
+
+  function deleteItem(id, callback) {
+    $.ajax({
+      url: `${BASE_URL}/items/${id}`,
+      method: 'DELETE',
+      success: callback
+    });
+  }
   return {
     getItems,
     createItem,
-    updateItem
+    updateItem,
+    deleteItem
   };
 })(); 
