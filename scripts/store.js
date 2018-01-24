@@ -10,11 +10,11 @@ const store = (function(){
     //   console.log(e.message);
     // }
     this.items.push(item);
-  }
+  };
 
   const findById = function(id) {
     return this.items.find(item => item.id === id);
-  }
+  };
 
   // const findAndToggleChecked = function(id) {
   //   const item = this.findById(id);
@@ -23,7 +23,7 @@ const store = (function(){
 
   const findAndDelete = function(id) {
     this.items = this.items.filter(item => item.id !== id);
-  }
+  };
 
   // const findAndUpdateName = function(id, name) {
   //   try {
@@ -35,21 +35,24 @@ const store = (function(){
   //   }
   // }
   const findAndUpdate=function(id,newData){
-    let modifyingItem=this.items.find(function(item) {
-      return item.id===id;
-    }
-    Object.assign(modifyingItem,newData);
-  }
+    let modifyingItem = this.items.find(function(item) {
+      return item.id === id;
+    });
+    Object.assign(modifyingItem, newData);
+  };
+
+  
+
 
 
   const toggleCheckedFilter = function() {
     this.hideCheckedItems = !this.hideCheckedItems;
-  }
+  };
 
 
   const setSearchTerm = function(term) {
     this.searchTerm = term;
-  }
+  };
 
 
   return {
@@ -58,10 +61,9 @@ const store = (function(){
     searchTerm: '',
     addItem,
     findById,
-    findAndToggleChecked,
+    findAndUpdate,
     findAndDelete,
-    findAndUpdateName,
     toggleCheckedFilter,
     setSearchTerm
   };
-  }());
+}());

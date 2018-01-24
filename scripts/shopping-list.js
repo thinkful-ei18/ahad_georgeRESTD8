@@ -86,7 +86,7 @@ const shoppingList = (function(){
     $('.js-shopping-list').on('click', '.js-item-delete', event => {
       // get the index of the item in store.items
       const id = getItemIdFromElement(event.currentTarget);
-      // delete the item
+      // delete the itegim
       store.findAndDelete(id);
       // render the updated shopping list
       render();
@@ -98,10 +98,13 @@ const shoppingList = (function(){
       event.preventDefault();
       const id = getItemIdFromElement(event.currentTarget);
       const itemName = $(event.currentTarget).find('.shopping-item').val();
-      store.findAndUpdateName(id, itemName);
+    });
+    api.updateItem(id, { name: newName }, () => {
+      store.findAndUpdateName(id, { name: newName });
       render();
     });
   }
+  
   
   function handleToggleFilterClick() {
     $('.js-filter-checked').click(() => {
