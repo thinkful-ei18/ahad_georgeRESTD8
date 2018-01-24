@@ -32,5 +32,5 @@ $(document).ready(function() {
 //   api.updateItem(item.id, { name: 'foobar' }, () => {
 //     console.log('updated!');
 //   });
-}
-);
+// }
+// );
