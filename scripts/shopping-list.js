@@ -73,7 +73,7 @@ const shoppingList = (function(){
       .data('item-id');
   }
   
-  function handleItemCheckClicked() {
+  function handleItemCheckedClicked() {
     $('.js-shopping-list').on('click', '.js-item-toggle', event => {
       const id = getItemIdFromElement(event.currentTarget);
       const item = store.findById(id);
